@@ -1,9 +1,6 @@
 package me.wooksang.java8to11.functionalinterface;
 
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class Foo {
     public static void main(String[] args) {
@@ -30,5 +27,26 @@ public class Foo {
 
         Predicate<String> predicate = (s) -> s.equals("wooksang");
         predicate.test("wooksang");
+    }
+
+    private void run() {
+        int baseNumber = 10;
+
+        class LocalClass {
+            public void printBaseNumber() {
+                int baseNumber = 11;
+                System.out.println(baseNumber);
+            }
+        }
+
+        Consumer<Integer> consumer = new Consumer<Integer>() {
+            @Override
+            public void accept(Integer baseNumber) {
+                System.out.println(baseNumber);
+            }
+        };
+
+        IntConsumer printInt = (i) -> System.out.println(i + baseNumber);
+        printInt.accept(10);
     }
 }
