@@ -1,9 +1,8 @@
-package me.wooksang.java8to11.Stream;
+package me.wooksang.java8to11.stream;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 

@@ -1,10 +1,23 @@
-package me.wooksang.java8to11.Stream;
+package me.wooksang.java8to11.stream;
+
+import me.wooksang.java8to11.optional.Progress;
+
+import java.util.Optional;
 
 public class OnlineClass {
 
     private Integer id;
     private String title;
     private boolean closed;
+    private Progress progress;
+
+    public Optional<Progress> getProgress() {
+        return Optional.ofNullable(progress);
+    }
+
+    public void setProgress(Progress progress) {
+        this.progress = progress;
+    }
 
     public OnlineClass(Integer id, String title, boolean closed) {
         this.id = id;
